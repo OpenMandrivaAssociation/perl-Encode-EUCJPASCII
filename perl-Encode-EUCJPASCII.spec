@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    EucJP-ascii - An eucJP-open mapping
 License:    GPL+ or Artistic
@@ -13,6 +13,7 @@ Source0:    http://www.cpan.org/modules/by-module/Encode/%{upstream_name}-%{upst
 
 BuildRequires: perl(Encode)
 BuildRequires: perl-devel
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
@@ -35,11 +36,10 @@ registered by any standards bodies.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
 rm -rf %buildroot
@@ -52,7 +52,3 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %doc Changes README
 %perl_vendorlib/*
-/usr/lib/debug/usr/lib/perl5/vendor_perl/*
-/usr/src/debug/%{upstream_name}-%{upstream_version}/*
-
-
