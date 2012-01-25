@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:	4
 
 Summary:    EucJP-ascii - An eucJP-open mapping
 License:    GPL+ or Artistic
